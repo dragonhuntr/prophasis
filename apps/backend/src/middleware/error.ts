@@ -1,8 +1,10 @@
 import type { Context, ErrorHandler } from "hono";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
+import type { AppEnv } from "../lib/context.ts";
+import { logger as rootLogger } from "../lib/logger.ts";
 
-export const errorHandler: ErrorHandler = (err, c: Context) => {
+export const errorHandler: ErrorHandler<AppEnv> = (err, c: Context<AppEnv>) => {
   if (err instanceof ZodError) {
     return c.json(
       {
@@ -28,7 +30,8 @@ export const errorHandler: ErrorHandler = (err, c: Context) => {
     );
   }
 
-  console.error("[backend] unhandled error", err);
+  const log = c.var.logger ?? rootLogger;
+  log.error({ err }, "unhandled error");
   return c.json(
     {
       error: {

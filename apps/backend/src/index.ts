@@ -1,9 +1,10 @@
 import { app } from "./app.ts";
 import { env } from "./env.ts";
+import { logger } from "./lib/logger.ts";
 
 const server = Bun.serve({
   port: env.PORT,
   fetch: app.fetch,
 });
 
-console.log(`[backend] listening on http://localhost:${server.port}`);
+logger.info({ port: server.port }, "backend listening");
