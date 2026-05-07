@@ -7,7 +7,7 @@ An opinionated, batteries-included Bun monorepo template with a working backend.
 ## Use this template
 
 ````bash
-bun create <github-user>/<this-repo> my-app
+bun create github.com/dragonhuntr/prophasis my-app
 cd my-app
 docker compose up -d
 bun run db:migrate
