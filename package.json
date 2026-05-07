@@ -4,7 +4,7 @@
   "type": "module",
   "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "dev": "bun --hot --filter backend dev",
+    "dev": "bun --hot apps/backend/src/index.ts",
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
     "db:generate": "bun --filter @repo/db db:generate",
