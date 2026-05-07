@@ -7,11 +7,11 @@
     "dev": "bun --hot apps/backend/src/index.ts",
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
-    "db:generate": "bun --filter @repo/db db:generate",
-    "db:migrate": "bun --filter @repo/db db:migrate",
-    "db:deploy": "bun --filter @repo/db db:deploy",
-    "db:studio": "bun --filter @repo/db db:studio",
-    "db:reset": "bun --filter @repo/db db:reset",
+    "db:generate": "prisma generate --schema=packages/db/prisma/schema.prisma",
+    "db:migrate": "prisma migrate dev --schema=packages/db/prisma/schema.prisma",
+    "db:deploy": "prisma migrate deploy --schema=packages/db/prisma/schema.prisma",
+    "db:studio": "prisma studio --schema=packages/db/prisma/schema.prisma",
+    "db:reset": "prisma migrate reset --force --schema=packages/db/prisma/schema.prisma",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write ."
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.0",
     "@types/bun": "latest",
+    "prisma": "^5.20.0",
     "typescript": "^5.6.0"
   },
   "trustedDependencies": ["@biomejs/biome", "@prisma/client", "@prisma/engines", "prisma"]
