@@ -1,4 +1,4 @@
-import type { auth } from "@repo/auth/server";
+import type { auth } from "@repo/auth";
 import type { Logger } from "./logger.ts";
 
 export type AppVariables = {

@@ -1,4 +1,4 @@
-import { auth } from "@repo/auth/server";
+import { auth } from "@repo/auth";
 import { createMiddleware } from "hono/factory";
 import type { AppEnv } from "../lib/context.ts";
 

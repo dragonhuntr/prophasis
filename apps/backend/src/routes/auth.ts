@@ -1,4 +1,4 @@
-import { auth } from "@repo/auth/server";
+import { auth } from "@repo/auth";
 import { Hono } from "hono";
 import type { AppEnv } from "../lib/context.ts";
 
