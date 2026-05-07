@@ -1,11 +1,9 @@
-import type { Auth } from "@repo/auth/server";
+import type { auth } from "@repo/auth/server";
 import type { Logger } from "./logger.ts";
 
-type SessionData = Awaited<ReturnType<Auth["api"]["getSession"]>>;
-
 export type AppVariables = {
-  user: NonNullable<SessionData>["user"] | null;
-  session: NonNullable<SessionData>["session"] | null;
+  user: typeof auth.$Infer.Session.user | null;
+  session: typeof auth.$Infer.Session.session | null;
   requestId: string;
   logger: Logger;
 };
