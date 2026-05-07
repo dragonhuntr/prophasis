@@ -2,10 +2,7 @@
   "name": "monorepo-root",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "dev": "bun --hot --filter backend dev",
     "db:up": "docker compose up -d postgres",
