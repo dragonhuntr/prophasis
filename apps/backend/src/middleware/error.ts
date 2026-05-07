@@ -1,8 +1,8 @@
+import { logger as rootLogger } from "@repo/logger";
 import type { Context, ErrorHandler } from "hono";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 import type { AppEnv } from "../lib/context.ts";
-import { logger as rootLogger } from "../lib/logger.ts";
 
 export const errorHandler: ErrorHandler<AppEnv> = (err, c: Context<AppEnv>) => {
   if (err instanceof ZodError) {

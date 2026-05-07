@@ -1,6 +1,6 @@
+import { logger } from "@repo/logger";
 import { createMiddleware } from "hono/factory";
 import type { AppEnv } from "../lib/context.ts";
-import { logger } from "../lib/logger.ts";
 
 export const requestId = createMiddleware<AppEnv>(async (c, next) => {
   const incoming = c.req.header("x-request-id");

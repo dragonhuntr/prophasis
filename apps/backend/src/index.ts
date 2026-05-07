@@ -1,7 +1,7 @@
 import { prisma } from "@repo/db";
+import { logger } from "@repo/logger";
 import { app } from "./app.ts";
 import { env } from "./env.ts";
-import { logger } from "./lib/logger.ts";
 
 const server = Bun.serve({
   port: env.PORT,

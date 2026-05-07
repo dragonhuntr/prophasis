@@ -13,13 +13,9 @@
     "@repo/auth": "workspace:*",
     "@repo/config": "workspace:*",
     "@repo/db": "workspace:*",
+    "@repo/logger": "workspace:*",
     "@repo/types": "workspace:*",
     "hono": "^4.6.0",
-    "pino": "^9.5.0",
-    "pino-http": "^10.3.0",
     "zod": "^3.23.0"
-  },
-  "devDependencies": {
-    "pino-pretty": "^11.3.0"
   }
 }

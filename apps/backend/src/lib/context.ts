@@ -1,5 +1,5 @@
 import type { auth } from "@repo/auth";
-import type { Logger } from "./logger.ts";
+import type { Logger } from "@repo/logger";
 
 export type AppVariables = {
   user: typeof auth.$Infer.Session.user | null;
