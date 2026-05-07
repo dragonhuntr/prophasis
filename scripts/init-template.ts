@@ -40,9 +40,10 @@ if (existsSync(resolve(repoRoot, ".git"))) {
   await $`rm -rf .git`.quiet();
 }
 await $`git init -q`;
+await $`bunx lefthook install`.quiet();
 await $`git add -A`;
 await $`git -c user.email=template@local -c user.name=template commit -q -m "chore: initialize from template"`;
-console.log("  ✓ initialized fresh git history");
+console.log("  ✓ initialized fresh git history with lefthook hooks");
 
 // 4. Remove the init script (template-only artifact)
 await $`rm -rf scripts`.quiet();
